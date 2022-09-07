@@ -10,12 +10,6 @@ variable "creation_token_name" {
   default     = "efs"
 }
 
-variable "availability_zone" {
-  description = "It will the efs on the specific zone."
-  type        = string
-  default     = "us-east-2b"
-}
-
 
 variable "additional_tags" {
   description = "Additional tags for the efs"
