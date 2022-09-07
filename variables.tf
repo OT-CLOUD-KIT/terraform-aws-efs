@@ -133,11 +133,6 @@ variable "efs_replication_az" {
   type        = string
 }
 
-variable "configure_efs_mount_point" {
-  description = "whether wants to configure efs mount point or not"
-  type        = bool
-  default     = false
-}
 
 variable "efs_arn" {
   description = "efs_arn for the policy resource"
