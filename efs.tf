@@ -1,6 +1,5 @@
 resource "aws_efs_file_system" "efs_file_system" {
   creation_token                  = var.creation_token_name
-  availability_zone_name          = var.availability_zone
   encrypted                       = false
   performance_mode                = "generalPurpose"
   throughput_mode                 = "bursting"
