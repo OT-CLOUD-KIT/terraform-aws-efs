@@ -1,12 +1,10 @@
 AWS EFS Terraform module
 =====================================
 
-[![Opstree Solutions][opstree_avatar]][opstree_homepage]
-
-[Opstree Solutions][opstree_homepage] 
+[![Opstree Solutions][opstree_avatar]][opstree_homepage]<br/>[Opstree Solutions][opstree_homepage] 
 
   [opstree_homepage]: https://opstree.github.io/
-  [opstree_avatar]: https://img.cloudposse.com/150x150/https://github.com/opstree.png
+  [opstree_avatar]: https://img.cloudposse.com/200x100/https://www.opstree.com/images/og_image8.jpg
 
 Terraform module which creates EFS on AWS.
 
