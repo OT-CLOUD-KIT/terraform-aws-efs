@@ -53,16 +53,12 @@ resource "aws_efs_access_point" "efs_access" {
 
 # Create Policy for EFS
 
-data "template_file" "policy" {
-  template = file(var.efs_file_system_policy_path)
-  vars = {
-    efs_file_system_arn = aws_efs_file_system.efs_file_system.arn
-  }
-}
 resource "aws_efs_file_system_policy" "efs_policy" {
   count = var.create_efs_file_system_policy ? 1 : 0
   file_system_id                     = aws_efs_file_system.efs_file_system.id
-  policy                             = data.template_file.policy.rendered
+  policy                             = templatefile(var.efs_file_system_policy_path, {
+    efs_file_system_arn              = aws_efs_file_system.efs_file_system.arn
+})
 }
 
 # Create Replication Configuration for EFS
