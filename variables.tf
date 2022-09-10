@@ -35,6 +35,11 @@ variable "throughput_mode" {
   type        = string
 }
 
+variable "provisioned_throughput_in_mibps"{
+  description = "The throughput, measured in MiB/s, that you want to provision for the file system."
+  type        = string
+}
+
 variable "transition_to_ia" {
   description = "It will transition files to the IA storage class"
   type        = string
@@ -59,32 +64,32 @@ variable "create_access_point" {
   default     = false
 }
 
-variable "efs_access_gid" {
+variable "access_point_gid" {
   description = "POSIX group ID used for all file system operations using this access point."
   type        = number
 }
 
-variable "efs_access_uid" {
+variable "access_point_uid" {
   description = "POSIX user ID used for all file system operations using this access point"
   type        = number
 }
 
-variable "efs_access_dir_path" {
+variable "access_point_dir_path" {
   description = "Path on the EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system."
   type        = string
 }
 
-variable "efs_access_owner_gid" {
+variable "access_point_owner_gid" {
   description = "POSIX group ID to apply to the root_directory"
   type        = string
 }
 
-variable "efs_access_owner_uid" {
+variable "access_point_owner_uid" {
   description = "POSIX user ID to apply to the root_directory"
   type        = string
 }
 
-variable "efs_access_permissions" {
+variable "access_point_permissions" {
   description = "POSIX permissions to apply to the RootDirectory"
   type        = string
 }
@@ -97,12 +102,7 @@ variable "create_efs_file_system_policy" {
   default     = false
 }
 
-# variable "efs_arn" {
-#   description = "EFS arn for the policy resource"
-#   type = 
-# }
-
-variable "efs_policy_path" {
+variable "efs_file_system_policy_path" {
   description = "Path where policy file is present"
   type        = string
 }
@@ -115,7 +115,7 @@ variable "create_efs_replication_configuration" {
   default     = false
 }
 
-variable "efs_replication_az" {
+variable "efs_replication_availability_zone" {
   description = "The availability zone in which the replica should be created."
   type        = string
 }
@@ -124,10 +124,10 @@ variable "efs_replication_az" {
 
 variable "mount_target_subnet_id" {
   description = "(Required) The ID of the subnet to add the mount target in"
-  type        = string
+  type        = list(any)
 }
 
-variable "efs_security_groups" {
+variable "mount_target_security_groups" {
   description = "(Optional) A list of up to 5 VPC security group IDs (that must be for the same VPC as subnet specified) in effect for the mount target."
   type        = list(any)
 }
