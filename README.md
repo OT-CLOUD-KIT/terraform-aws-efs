@@ -5,6 +5,7 @@ A Terraform module to **create and manage new or existing AWS EFS (Elastic File 
 ---
 
 ## Architecture
+<img width="738" height="406" alt="image" src="https://github.com/user-attachments/assets/4ce208f9-3f69-4244-a361-d2b2513be013" />
 
 
 > This module helps:
