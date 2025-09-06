@@ -56,21 +56,9 @@ secondary_existing_ebs_volumes = [
 ]
 
 # ------------------- Naming Conventions ----------------
-random_alphanumeric_len = 4
-
-bu       = "ot"
-app      = "bp"
-env      = "d"
-resource = "efs"
-tenant   = ""
-
-special = false
-upper   = false
-number  = true
-
-gen_no_of_names = 1
-team            = "infra"
-program         = "ot"
+env = "dev"
+owner = "opstree"
+app = "otcloud-kit"
 
 # ------------------- Network & SG ----------------------
 enable_public_web_security_group_resource = true

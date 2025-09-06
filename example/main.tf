@@ -1,24 +1,4 @@
 
-module "naming" {
-  source   = "git@github.com:OT-CLOUD-KIT/terraform-aws-naming.git?ref=dev"
-  bu       = var.bu
-  env      = var.env
-  app      = var.app
-  tenant   = var.tenant
-  resource = var.resource
-}
-
-module "standard_tags" {
-  source = "git@github.com:OT-CLOUD-KIT/terraform-aws-standard-tagging.git?ref=dev"
-
-  bu      = var.bu
-  program = var.program
-  app     = var.app
-  team    = var.team
-  region  = var.region
-  env     = var.env
-}
-
 module "efs" {
   source                          = "git@github.com:OT-CLOUD-KIT/terraform-aws-efs.git?ref=Feature"
   subnet_id                     = var.subnet_id
@@ -28,7 +8,6 @@ module "efs" {
   add_subnet_efs_network          = true
 
 }
-
 
 
 module "ec2_with_optional_ebs" {
